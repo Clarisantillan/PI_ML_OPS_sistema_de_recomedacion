@@ -11,7 +11,7 @@ decorator==5.1.1
 exceptiongroup==1.1.1
 executing==1.2.0
 fastapi==0.97.0
-fonttools==4.40.0
+fonttools==4.38.0
 h11==0.14.0
 idna==3.4
 ipykernel==6.23.2
