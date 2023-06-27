@@ -11,7 +11,8 @@ app = FastAPI(title='Sistema de Recomendacion de Peliculas',
 # creo ruta raiz http://127.0.0.1:8000
 
 df_movies= pd.read_csv('./ETL/movies_limpio.csv')
-df_movies.info()
+df_actor=  pd.read_csv('./API/actor.csv')
+df_director= pd.read_csv('./API/director.csv')
 
 @app.get("/")
 
@@ -88,3 +89,68 @@ def score_titulo(titulo_de_la_filmacion):
                 return f"La película {titulo.capitalize()} fue estrenada en el año {fecha} con una puntuación/popularidad de {popularidad}."
     
     return 'No se ha encontrado el título de la filmación'
+
+#Funcion Votos de la filmacion
+@app.get('/votos_titulo/{titulo_de_la_filmacion}')
+def votos_titulo(titulo_de_la_filmacion) : 
+    titulos = df_movies['title']
+    
+    for titulo in titulos:
+        if titulo == titulo_de_la_filmacion:
+            fecha_series = df_movies[df_movies['title'] == titulo_de_la_filmacion]['release_year']
+            n_votos_series =  df_movies[df_movies['title'] == titulo_de_la_filmacion]['vote_count'].astype(int)
+            promedio_series = df_movies[df_movies['title'] == titulo_de_la_filmacion]['vote_average']
+            
+            if not n_votos_series.empty and not fecha_series.empty and not promedio_series.empty:
+                fecha = fecha_series.astype(str).iloc[0]
+                n_votos = int(n_votos_series.astype(str).iloc[0])
+                promedio= promedio_series.astype(str).iloc[0]
+                
+                if n_votos >= 2000:
+                 return f"La película {titulo.capitalize()} fue estrenada en el año {fecha}. La misma cuenta con un total de {n_votos} valoraciones, con un promedio de {promedio}."
+    
+    return 'La filmacion no cuenta con suficientes votos para obtener la informacion solicitada.'
+
+
+
+@app.get('/get_actor/{nombre_actor}')
+def get_actor(nombre_actor) :
+    nombres = df_actor['name']
+    
+    for nombre in nombres:
+        if nombre == nombre_actor:
+            contador= df_actor[df_actor['name'] == nombre_actor]['title'].shape[0]
+            retorno_total = df_actor[df_actor['name'] == nombre_actor]['return'].sum().round(2)
+            retorno_promedio = (retorno_total / contador).round(2)
+            
+        
+            return f"El actor {nombre.capitalize()} ha recibido de {contador} filmaciones, un retorno de {retorno_total} con un promedio de {retorno_promedio} por filmación."
+    
+    return 'No se ha encontrado el actor solicitado.'
+
+
+@app.get('/get_director/{nombre_director}')
+def get_director(nombre_director):
+    nombres = df_director['name']
+    
+    for nombre in nombres:
+        if nombre == nombre_director:
+            peliculas = (df_director[df_director['name'] == nombre_director]['title']).drop_duplicates()
+            exito = (((df_director[df_director['name'] == nombre_director]['return']).drop_duplicates()).sum()).round(2)
+            
+        
+            resultado = f"El director {nombre.capitalize()} ha obtenido un éxito de {exito}. Sus películas:\n"
+            
+            for i, pelicula in enumerate(peliculas):
+                fecha_lanzamiento = df_director[(df_director['name'] == nombre_director) & (df_director['title'] == pelicula)]['release_date'].iloc[0]
+                retorno = df_director[(df_director['name'] == nombre_director) & (df_director['title'] == pelicula)]['return'].iloc[0]
+                costo = df_director[(df_director['name'] == nombre_director) & (df_director['title'] == pelicula)]['budget'].iloc[0]
+                ganancia = df_director[(df_director['name'] == nombre_director) & (df_director['title'] == pelicula)]['revenue'].iloc[0]
+                
+                resultado += f"Película {i+1}: {pelicula}, lanzada el {fecha_lanzamiento} con un retorno de {retorno}. Sus costos={costo} USD y ganancias={ganancia} USD \n "
+            
+           
+            
+            return print(resultado)
+    
+    return 'No se ha encontrado el director solicitado.'
