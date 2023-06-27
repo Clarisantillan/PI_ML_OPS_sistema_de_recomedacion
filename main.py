@@ -124,7 +124,7 @@ def get_actor(nombre_actor) :
             retorno_promedio = (retorno_total / contador).round(2)
             
         
-            return f"El actor {nombre.capitalize()} ha recibido de {contador} filmaciones, un retorno de {retorno_total} con un promedio de {retorno_promedio} por filmación."
+            return f"El/la actor/a {nombre.capitalize()} ha recibido de {contador} filmaciones, un retorno de {retorno_total} con un promedio de {retorno_promedio} por filmación."
     
     return 'No se ha encontrado el actor solicitado.'
 
@@ -151,6 +151,6 @@ def get_director(nombre_director):
             
            
             
-            return print(resultado)
+            return resultado
     
     return 'No se ha encontrado el director solicitado.'
