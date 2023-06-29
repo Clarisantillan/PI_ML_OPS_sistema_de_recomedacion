@@ -10,9 +10,8 @@ Numpy - Pandas - Json.
 
  - Para aquellas columnas anidadas utilice diferentes metodos. A la columna 'belongs_to_collection', la converti en diccionario y luego con una funcion itere cada uno para guardar el valor de 'name' en una lista llamanda collection.
 En la columna 'genres' utilice una funcion lamba. En las columnas 'production_countries', 'production_companies' y 'spoken_languages', utilice una expresion regular para extraer el 'name', modificando directamente toda la columna.
-
-- Modifiqué los valores nulos de los campos 'revenue' y 'budget' con 0.
-- El formato de la columna 'release_date'la modifique a  AAAA-mm-dd. En base a esta columna cree la columna 'release_yeaer', 'release_month' y 'release_day'. Con el fin de preparar la data para futuros analisis.
+- Reemplace los valores nulos de los campos 'revenue' y 'budget' con 0.
+- Modifique formato de la columna 'release_date' a (AAAA-mm-dd). En base a esta columna cree la columna 'release_yeaer', 'release_month' y 'release_day'. Con el fin de preparar la data para futuros analisis.
 - Cree la columna del retorno = ingresos/presupuesto('revenue'/'budget').
 - Elimine columnas necesarias, filtre nulos, y elimine filas con mas de 15  valores Nan(15 ya que me parecio que menos podrian ser relevantes igual).
 
