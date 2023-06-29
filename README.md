@@ -22,11 +22,11 @@ Para ver mas en detalle pueden acceder a la carpeta llamada ETL en el repositori
 ### API
 Del ETL realizado, exporte los datos limpios a nuevos csv que utilice para desarrollar con exito las funciones solicitadas. Estas como mencione al principio, permiten al cliente obtener informacion relevenate sobre peliculas y directores. Enumero a continuacion la funcionalidad de de cada una:
 
-1 -Obtener la cantidad de peliculas estrenadas en un mes especifico.
-2- Obtener la cantidad de películas estrenadas en un día específico.
-3- Obtener el titulo, el año de estreno y el score de la pelicula introducida.
-4- Obtener el título, la cantidad de votos y el valor promedio de las votaciones de aquellas que cuenten con mas de 2000 valoraciones. 
-5- Obtener el exito de un actor medido con el retorno, la cantidad de peliculas en las que participo y el promedio del retorno.
-6- Obtener el éxito de un director medido a través del retorno, el nombre de cada película dirigida con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma.
+1. Obtener la cantidad de peliculas estrenadas en un mes especifico.
+2. Obtener la cantidad de películas estrenadas en un día específico.
+3. Obtener el titulo, el año de estreno y el score de la pelicula introducida.
+4. Obtener el título, la cantidad de votos y el valor promedio de las votaciones de aquellas que cuenten con mas de 2000 valoraciones. 
+5. Obtener el exito de un actor medido con el retorno, la cantidad de peliculas en las que participo y el promedio del retorno.
+6. Obtener el éxito de un director medido a través del retorno, el nombre de cada película dirigida con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma.
 
 Para la construccion de la API utiilice el framework FastAPI, para la simplificacion del proceso. Ya que es moderno y de altorendimiento.
