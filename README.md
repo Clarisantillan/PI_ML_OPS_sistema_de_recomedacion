@@ -5,7 +5,8 @@
  Los datos entregados estaban en formato .csv, los mismos se encontraban en su mayoria anidados, sin transformar, y no contaban con procesos automatizados para la actualización de nuevas películas. Por lo que afronte el desafio de la siguiente manera:
 
 ## Estructura del proyecto
-###ETL
+### ETL
+
 En la carpeta ETL, cree dos notebook (uno para movies.csv, donde hay informacion sobre las peliculas. Y otro para credits.csv donde hay informacion sobre directores y actores). Cargue en cada uno los datos entregados para hacer el ETL (extracción, transformación y limpieza de los datos), usando las siguientes librerías de Python:
 Numpy - Pandas - Json.
 
@@ -18,7 +19,7 @@ En la columna 'genres' utilice una funcion lamba. En las columnas 'production_co
 
 Para ver mas en detalle pueden acceder a la carpeta llamada ETL en el repositorio.
 
-###API
+### API
 Del ETL realizado, exporte los datos limpios a nuevos csv que utilice para desarrollar con exito las funciones solicitadas. Estas como mencione al principio, permiten al cliente obtener informacion relevenate sobre peliculas y directores. Enumero a continuacion la funcionalidad de de cada una:
 
 1 -Obtener la cantidad de peliculas estrenadas en un mes especifico.
