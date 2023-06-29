@@ -1,5 +1,4 @@
 # Sistema de Recomendacion de Peliculas
-
  Este proyecto se basa en posicionarse en el rol de un MLOps Engineer y crear un sistema de recomendación de películas basado en la similitud de contenido. Se toma la información de películas en nuestro archivero de datos, para identificar aquellas películas similares a las que el usuario elige. Complementariamente se debian crear 6 funciones con el fin de obtener informacion relevenate sobre peliculas y directores.
 
  Los datos entregados estaban en formato .csv, los mismos se encontraban en su mayoria anidados, sin transformar, y no contaban con procesos automatizados para la actualización de nuevas películas. Por lo que afronte el desafio de la siguiente manera:
