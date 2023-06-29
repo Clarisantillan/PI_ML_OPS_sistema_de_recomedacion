@@ -29,4 +29,4 @@ Del ETL realizado, exporte los datos limpios a nuevos csv que utilice para desar
 5. Obtener el exito de un actor medido con el retorno, la cantidad de peliculas en las que participo y el promedio del retorno.
 6. Obtener el éxito de un director medido a través del retorno, el nombre de cada película dirigida con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma.
 
-Para la construccion de la API utiilice el framework FastAPI, para la simplificacion del proceso. Ya que es moderno y de altorendimiento.
+Para la construccion de la API utiilice el framework FastAPI, para la simplificacion del proceso. Ya que es moderno y de alto rendimiento.
