@@ -30,3 +30,4 @@ Del ETL realizado, exporte los datos limpios a nuevos csv que utilice para desar
 6. Obtener el éxito de un director medido a través del retorno, el nombre de cada película dirigida con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma.
 
 Para la construccion de la API utiilice el framework FastAPI, para la simplificacion del proceso. Ya que es moderno y de alto rendimiento.
+El paso a paso de la creacion de las funciones y el merge entre los dataset se encuentra en la carpeta API y en main.py las funciones pasadas en limpio. 
