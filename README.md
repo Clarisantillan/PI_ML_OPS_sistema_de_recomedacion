@@ -1,5 +1,4 @@
 # Sistema de Recomendacion de Peliculas
-
  Este proyecto se basa en posicionarse en el rol de un MLOps Engineer y crear un sistema de recomendación de películas basado en la similitud de contenido. Se toma la información de películas en nuestro archivero de datos, para identificar aquellas películas similares a las que el usuario elige. Complementariamente se debian crear 6 funciones con el fin de obtener informacion relevenate sobre peliculas y directores.
 
  Los datos entregados estaban en formato .csv, los mismos se encontraban en su mayoria anidados, sin transformar, y no contaban con procesos automatizados para la actualización de nuevas películas. Por lo que afronte el desafio de la siguiente manera:
@@ -31,3 +30,9 @@ Del ETL realizado, exporte los datos limpios a nuevos csv que utilice para desar
 
 Para la construccion de la API utiilice el framework FastAPI, para la simplificacion del proceso. Ya que es moderno y de alto rendimiento.
 El paso a paso de la creacion de las funciones y el merge entre los dataset se encuentra en la carpeta API y en main.py las funciones pasadas en limpio. 
+
+### EDA
+El siguiente paso fue realizar el analisis exploratorio de los datos(EDA).
+En el pude observar estadisticas descriptivas, estructura de los datos y visualizacion de los datos faltantes(algo a destacar es que collection quedo con 42128 valores nulos, pero esto se debe a que al desglosar la columna 'belongs_to_collection' varias filas se asignan vacias ya que este es un diccionario que indica a que franquicia o serie de películas pertenece tal película y no todas pertenecen a una coleccion).
+
+Tambien hice un recuento de los generos y procedi haciendo un analisis exploratorio profundo que incluye: Visualizacion de las relaciones entre variables, la distribucion de géneros, correlaciones, visualizacion del top 5 años de mayor cantidad de peliculas estrenadas, las productoras más frecuentes, directores con mayor numero de peliculas producidas, valores atipicos con boxplot, etc.
