@@ -1,25 +1,27 @@
 import pandas as pd 
 import numpy as np
-from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.responses import HTMLResponse, FileResponse
+from fastapi import FastAPI, Request
+from fastapi.templating import Jinja2Templates
 from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI(title='Sistema de Recomendacion de Peliculas',
             description='En este sitio podra ingresar diferentes parametros para obtener informacion sobre peliculas y directores')
-
+templates = Jinja2Templates(directory="./index.html")
 # creo ruta raiz http://127.0.0.1:8000
 
 df_movies= pd.read_csv('./ETL/movies_limpio.csv')
 df_actor=  pd.read_csv('./API/actor.csv')
 df_director= pd.read_csv('./API/director.csv')
 
-@app.get("/")
+#index.html
+#@app.get('/', response_class=HTMLResponse)
+#def welcome(request: Request):
+#    return templates.TemplateResponse("index.html", {"request": request}) 
 
-def index():
-    return "Hola soy Clari"   
  
 @app.get("/", response_class=HTMLResponse)
 def root():
