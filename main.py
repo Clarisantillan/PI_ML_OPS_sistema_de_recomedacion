@@ -14,7 +14,7 @@ templates = Jinja2Templates(directory="./templates")
 # creo ruta raiz http://127.0.0.1:8000
 
 df_movies= pd.read_csv('./ETL/movies_limpio.csv')
-df_actor=  pd.read_csv('./ET/actor.csv')
+df_actor=  pd.read_csv('./ETL/actor.csv')
 df_director= pd.read_csv('./ETL/director.csv')
 
 #index.html
