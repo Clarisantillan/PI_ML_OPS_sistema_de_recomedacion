@@ -4,6 +4,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.responses import HTMLResponse, FileResponse
 from datetime import datetime
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI(title='Sistema de Recomendacion de Peliculas',
             description='En este sitio podra ingresar diferentes parametros para obtener informacion sobre peliculas y directores')
@@ -154,3 +156,34 @@ def get_director(nombre_director):
             return resultado
     
     return 'No se ha encontrado el director solicitado.'
+
+
+@app.get('/recomendar_peliculas/{titulo_pelicula}')
+def recomendar_peliculas(titulo_pelicula):
+    df = pd.read_csv('./peliculas_filtradas.csv')
+    num_similares = 5
+    
+    # Filtro el df por el título de la peli solicitada
+    pelicula_filtro = df[df["title"] == titulo_pelicula]
+    
+    if pelicula_filtro.empty:
+        print("No se encontró ninguna película con ese título.")
+        return []
+    
+    # Obtengo el índice de la película filtrada
+    target_movie_index = pelicula_filtro.index[0]
+
+    # Creo las representaciones numéricas de las descripciones de películas
+    vectorizer = TfidfVectorizer()
+    tfidf_matrix = vectorizer.fit_transform(df["overview"])
+
+    # Calculo la similitud del coseno entre las descripciones de películas
+    similarity_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)
+
+    # Obtengo los índices de las películas más similares
+    similar_movies_indices = similarity_matrix[target_movie_index].argsort()[::-1][1:num_similares+1]
+
+    # Obtengo las películas similares del df
+    peliculas_similares = df.iloc[similar_movies_indices]["title"].tolist()
+    
+    return f" Las peliculas similares para el titulo '{titulo_pelicula.capitalize()}' son:  {peliculas_similares}."
