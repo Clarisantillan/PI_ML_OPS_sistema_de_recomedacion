@@ -5,55 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Recomedacion de Peliculas</title>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <style>
-        body {
-            background-color: black;
-            color: white;
-        }
+        body{
+            background-color:#f6bfbf;}
 
-        h1 {
+    main{
+        background-color:#f6bfbf;
+        padding:30px;
+    }
+       h1 {
+         font-weight: bold;
+         text-shadow: 2px 1px #9b3e3e;
             font-size: 24px;
+            color: #b76161;
+            display: flex;
+            justify-content: center;
+            text-align: center;
         }
-
-        .introduction {
-            font-size: 18px;
-            margin-bottom: 20px;
+        h2{
+            font-size:25px;
+            color: #b76161;
+            display: flex;
+            justify-content: center;
+            text-align: center;
         }
-
-        .bullets {
-            font-size: 16px;
-            margin-bottom: 10px;
+       p{
+          font-size: 20px;
+       }
+        #intro{
+            display: flex;
+            justify-content: center;
+            text-align: center;
         }
-
-        .signature {
-            font-size: 14px;
-            margin-top: 20px;
+        .contacto{
+            display: inline-flex;
+            padding: 5px;
+        }
+        .contacto>p{
+            padding: 10px;
+        }
+        .boton{
+          display: flex;
+          justify-content: center;
+          padding: 5px;
+          color:#fbfbfb;
+          background-color: #b76161;
+          border-radius: 20px;
+        }
+        .boton:hover{
+            color: #b76161;
+            background-color:#fbfbfb;
+            cursor: pointer;
+        }
+        #a{
+            font-size:25px ;
+        }
+        #a:hover{
+            color: #b76161;
+            background-color:#fbfbfb;
+            cursor: pointer;
+        }
+        footer{
+            color:#b76161;
+           display: flex;
+           justify-content: center;
+            padding:10px;
+        }
+        a{
+            text-decoration: none;
+            color:#9b3e3e;
+            padding: 5px;
+        }
+        a:hover{
+            color:#fbfbfb;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Proyecto de Clara Santillan</h1>
-    <h2>PI_ML_OPS</h2>
-    <h3>Este proyecto se basa en posicionarse en el rol de un MLOps Engineer y crear un sistema de recomendación de películas basado en la similitud de contenido. Se toma la información de películas en nuestro archivero de datos, para identificar aquellas películas similares a las que el usuario elige. Complementariamente se debian crear 6 funciones con el fin de obtener informacion relevenate sobre peliculas y directores.</h3>
-</body>
-</html>
+    <header>
+        <h1>BIENVENIDOS A MI PROYECTO PI_ML_OPS!<br>Soy Clara Santillan</h1>
+    </header>
+    <main>
+        <div id="intro">
+            <p>Este proyecto se basa en posicionarse en el rol de un MLOps Engineer y crear un sistema de recomendación de películas basado en la similitud de contenido.
+            Se toma la información de películas en nuestro archivero de datos, para identificar aquellas películas similares a las que el usuario elige. Complementariamente se debian crear 6 funciones con el fin de obtener informacion relevenate sobre peliculas y directores.</p>
+        </div>
 
-    <div class="bullets">
-        <ul>
-            <li>Obtener la cantidad de peliculas estrenadas en un mes especifico.<a href="/cantidad_filmaciones_mes/enero">enero.</a></li>
-            <li>Obtener la cantidad de películas estrenadas en un día específico.<a href="/cantidad_filmaciones_dia/lunes"> lunes.</a></li>
-            <li>Obtener el titulo, el año de estreno y el score de la pelicula introducida.<a href="/score_titulo/ToyStory">Toy Story.</a></li>
-            <li>Obtener el título, la cantidad de votos y el valor promedio de las votaciones de aquellas que cuenten con mas de 2000 valoraciones.<a href="/votos_titulo/GrumpierOldMen">Grumpier Old Men.</a></li>
-            <li>Obtener el exito de un actor medido con el retorno, la cantidad de peliculas en las que participo y el promedio del retorno.<a href="/get_actor/TimAllen">Tim Allen.</a></li>
-            <li>Obtener el éxito de un director medido a través del retorno, el nombre de cada película dirigida con la fecha de lanzamiento, retorno individual, costo y ganancia de la misma.<a href="/get_director/CedricGibbons">Cedric Gibbons.</a></li>
-            <li>Obtén recomendaciones de películas.<a href="/recomendacion/Cars"> Minions.</a></li>
-        </ul>
-    </div>
+       <div class="boton"><a id="a" href="https://sistema-de-recomedacion-peliculas.onrender.com/docs">Ingresar a la API</a></div>
+    </main>
     <footer>
-        <p class="signature">Realizado por Clara Santillan</p>
-        <p class="signature"><i class="fi fi-brands-github"></i>GitHub: <a href="https://github.com/Clarisantillan">Clarisantillan</a></p>
-        <p class="signature"><i class="fi fi-brands-linkedin"></i>LinkedIn: <a href="https://www.linkedin.com/in/clara-santillan/">Clara Santillan</a></p>
-    </footer>>
+      <div class="contacto">
+         <p><i class="fi fi-rr-envelope"></i><a href="mailto:clarisantillan@icloud.com?Subject=Interesado/a%20en%20contactarla%20">Email</a></p>
+         <p><i class="fi fi-brands-github"></i><a href="https://github.com/Clarisantillan">GitHub</a></p>
+         <p><i class="fi fi-brands-linkedin"></i><a href="https://www.linkedin.com/in/clara-santillan/">Linkedin</a></p>
+       </div>
+    </footer>
    
 </body>
-</html>
+
+  
