@@ -52,7 +52,7 @@ El desarrollo de la funcion la pueden ver en el archivo 'ml.ipynb' y en el archi
 
 ### IMPLEMENTACION DEL PROYECTO
 Para el deploy del mismo use el servicio Render. 
-Link al sitio: (https://sistema-de-recomedacion-peliculas.onrender.com)
-Link a video explicativo en Youtube: ()
+- Link al sitio: (https://sistema-de-recomedacion-peliculas.onrender.com)
+- Link a video explicativo en Youtube: ()
 
 
